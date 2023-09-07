@@ -1,4 +1,4 @@
-### Stop Watch
+## Stop Watch
 
 This is the daily challenge I participate in on [WebDevDaily](https://www.webdevdaily.io/).
 
