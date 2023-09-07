@@ -1,4 +1,4 @@
-import Time from './Time';
+import Time from './components/Time';
 import Button from './components/Button';
 import List from './components/List';
 
