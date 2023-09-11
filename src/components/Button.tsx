@@ -1,9 +1,10 @@
 type ButtonProps = {
   name: string;
   className: string;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
 };
 
-const Button: React.FC<ButtonProps> = ({ name, className }) => {
+const Button: React.FC<ButtonProps> = ({ name, className, onClick }) => {
   return (
     <div>
       <button
