@@ -5,7 +5,9 @@ This is the daily challenge I participate in on [WebDevDaily](https://www.webdev
 ### Features
 
 _Start/Stop Button :_ Begin and halt the timer with a single click. The button toggles between "Start" and "Stop" to control the timer's activity.
+
 _Lap Timer :_ Easily record lap times by clicking the "Lap" button. The app will list and save all your lap times for reference.
+
 _Reset Timer :_ To reset the timer to zero, simply click the "End" button. This action clears the current timing session.
 
 ### Tools
