@@ -1,20 +1,11 @@
+import useFormatTime from '../hooks/useFormatTime';
+
 type ListProps = {
+  time: number;
   lapTimes: number[];
 };
 
-const List: React.FC<ListProps> = ({ lapTimes }) => {
-  const formatListTime = (timeInSeconds: number) => {
-    const hours = Math.floor(timeInSeconds / 3600);
-    const minutes = Math.floor((timeInSeconds % 3600) / 60);
-    const seconds = timeInSeconds % 60;
-
-    const formatHours = hours.toString().padStart(2, '0');
-    const formatMinutes = minutes.toString().padStart(2, '0');
-    const formatSeconds = seconds.toString().padStart(2, '0');
-
-    return `${formatHours}:${formatMinutes}:${formatSeconds}`;
-  };
-
+const List: React.FC<ListProps> = ({ time, lapTimes }) => {
   return (
     <div className='py-12'>
       <ul>
@@ -26,6 +17,7 @@ const List: React.FC<ListProps> = ({ lapTimes }) => {
 
       <ul>
         {lapTimes.map((lapTime, index) => {
+          const formattedLapTime = useFormatTime(lapTime);
           return (
             <div
               key={index}
@@ -34,7 +26,7 @@ const List: React.FC<ListProps> = ({ lapTimes }) => {
               }`}
             >
               <li>{index + 1}</li>
-              <li>{formatListTime(lapTime)}</li>
+              <li>{formattedLapTime}</li>
             </div>
           );
         })}
