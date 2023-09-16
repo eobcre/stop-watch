@@ -39,23 +39,10 @@ const App: React.FC = () => {
     setLapTimes([]);
   };
 
-  // format time display
-  const formatTime = (timeInSeconds: number) => {
-    const hours = Math.floor(timeInSeconds / 3600);
-    const minutes = Math.floor((timeInSeconds % 3600) / 60);
-    const seconds = timeInSeconds % 60;
-
-    return `${padTime(hours)}:${padTime(minutes)}:${padTime(seconds)}`;
-  };
-
-  const padTime = (value: number) => {
-    return value < 10 ? `0${value}` : `${value}`;
-  };
-
   return (
     <div className='flex justify-center items-center bg-[#5C6877] h-screen'>
       <div className='bg-[#303030] rounded w-[400px] h-[480px]'>
-        <Time formatTime={() => formatTime(time)} />
+        <Time time={time} />
         <div className='flex justify-center gap-5'>
           <Button
             onClick={handleStartStop}
@@ -65,7 +52,7 @@ const App: React.FC = () => {
           <Button onClick={handleLap} name='Lap' className='bg-[#4C7EC1]' />
           <Button onClick={handleReset} name='End' className='bg-[#AB3839]' />
         </div>
-        <List lapTimes={lapTimes} />
+        <List time={time} lapTimes={lapTimes} />
       </div>
     </div>
   );
