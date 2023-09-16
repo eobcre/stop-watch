@@ -1,11 +1,10 @@
 import useFormatTime from '../hooks/useFormatTime';
 
 type ListProps = {
-  time: number;
   lapTimes: number[];
 };
 
-const List: React.FC<ListProps> = ({ time, lapTimes }) => {
+const List: React.FC<ListProps> = ({ lapTimes }) => {
   return (
     <div className='py-12'>
       <ul>
