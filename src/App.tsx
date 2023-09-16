@@ -52,7 +52,7 @@ const App: React.FC = () => {
           <Button onClick={handleLap} name='Lap' className='bg-[#4C7EC1]' />
           <Button onClick={handleReset} name='End' className='bg-[#AB3839]' />
         </div>
-        <List time={time} lapTimes={lapTimes} />
+        <List lapTimes={lapTimes} />
       </div>
     </div>
   );
