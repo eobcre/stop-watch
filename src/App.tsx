@@ -36,6 +36,7 @@ const App: React.FC = () => {
   // end, reset button
   const handleReset = () => {
     setTime(0);
+    setRunning(false);
     setLapTimes([]);
   };
 
