@@ -1,11 +1,15 @@
+import useFormatTime from '../hooks/useFormatTime';
+
 type TimeProps = {
-  formatTime: () => string;
+  time: number;
 };
 
-const Time: React.FC<TimeProps> = ({ formatTime }) => {
+const Time: React.FC<TimeProps> = ({ time }) => {
+  const formatTime = useFormatTime(time);
+
   return (
     <div className='flex justify-center items-center mt-10 mb-4'>
-      <p className='text-white text-[36px]'>{formatTime()}</p>
+      <p className='text-white text-[36px]'>{formatTime}</p>
     </div>
   );
 };
